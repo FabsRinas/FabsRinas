@@ -1,0 +1,113 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Carioca_30_09
+{
+    class Pessoa
+    {
+        private string nome;
+        private string rg;
+        private string cpf;
+        private string endereço;
+
+        public Pessoa(string nome, string rg, string cpf, string endereço)
+        {
+            this.nome = nome;
+            this.rg = rg;
+            this.cpf = cpf;
+            this.endereço = endereço;
+        }
+        public string getnome()
+        {
+            return this.nome;
+        }
+        public void setnome(string nome)
+        {
+            this.nome = nome;
+        }
+        public string getrg()
+        {
+            return this.rg;
+        }
+        public void setrg(string rg)
+        {
+            this.rg = rg;
+        }
+        public string getcpf()
+        {
+            return this.cpf;
+        }
+        public void setcpf(string cpf)
+        {
+            this.cpf = cpf;
+        }
+        public string getendereço()
+        {
+            return this.endereço;
+        }
+        public void setendereço(string endereço)
+        {
+            this.endereço = endereço;
+        }
+        public string ImprimeAluno()
+        {
+            return Console.WriteLine(al.getnome() + " " + al.getrg() + " " + al.getcpf() + " " + al.getmatricula());
+        }
+    }
+}
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Carioca_30_09
+{
+    class Aluno : Pessoa
+    {
+        private int matricula;
+        private float P1;
+        private float P2;
+        private int faltas;
+
+        public Aluno(string nome, string rg, string cpf, int matricula, string endereço, float P1, float P2, int faltas) : base (nome, cpf, rg, endereço)
+        {
+            this.matricula = matricula;
+            this.P1 = P1;
+            this.P2 = P2;
+            this.faltas = faltas;
+
+        }
+        public int getmatricula()
+        {
+            return this.matricula;
+        }
+        public void setmatricula(int matricula)
+        {
+            this.matricula = matricula;
+        }
+    }
+}
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Carioca_30_09
+{
+    class Program
+    {
+        static void Main(string[] args)
+        { 
+        }
+    }
+}
