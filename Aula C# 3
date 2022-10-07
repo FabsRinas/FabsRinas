@@ -1,0 +1,115 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Collections;
+
+namespace Coleções07_10
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Departamento vendas = new Departamento("vendas");
+
+            Funcionario func1 = new Funcionario("maria", 123, "6765657");
+            Funcionario func2 = new Funcionario("pedro", 789, "2213438");
+
+            vendas.adicionaFuncionario(func1);
+            vendas.adicionaFuncionario(func2);
+            vendas.ImprimeDepartamento();
+        }
+    }
+}
+
+
+
+////////////////////////////////////////////////////////
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Collections;
+
+namespace Coleções07_10
+{
+    class Funcionario
+    {
+        private string nome;
+        private int matricula;
+        private string cpf;
+
+        public string Nome { get => nome; set => nome = value; }
+        public int Matricula { get => matricula; set => matricula = value; }
+        public string Cpf { get => cpf; set => cpf = value; }
+
+        public Funcionario(string nome, int matricula, string cpf)
+        { 
+            this.nome = nome;
+            this.matricula = matricula;
+            this.cpf = cpf;
+        }
+        public string getnome()
+        {
+            return this.Nome;
+        }
+        public void setnome(string Nome)
+        {
+            this.Nome = Nome;
+        }
+        public int getmatricula()
+        {
+            return this.Matricula;
+        }
+        public void setmatricula(int Matricula)
+        {
+            this.Matricula = Matricula;
+        }
+        public string getcpf(string Cpf)
+        {
+            return this.Cpf;
+        }
+        public void setcpf(string Cpf)
+        {
+            this.Cpf = Cpf;
+        }
+        public void ImprimeFuncionario()
+        {
+            Console.WriteLine(this.Nome + " " + this.Matricula + " " + this.Cpf);
+
+        }
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////////////
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Collections;
+
+namespace Coleções07_10
+{
+    class Departamento
+    {
+        private string nome;
+
+        public Departamento(string nome)
+        {
+            this.nome = nome;
+        }
+        ArrayList f = new ArrayList();
+        public void ImprimeDepartamento()
+        {
+            foreach (Funcionario func in f) func.ImprimeFuncionario();
+        }
+        public void adicionaFuncionario(Funcionario func)
+        {
+            f.Add(func);
+        }
+    }
+}
